@@ -10,10 +10,10 @@ const NavBar = () => {
     },
 
     {
-        id: 2,
-        path: '/categories',
-        text: 'Categories',
-      },
+      id: 2,
+      path: '/categories',
+      text: 'Categories',
+    },
   ];
   return (
     <>
@@ -24,7 +24,7 @@ const NavBar = () => {
         <ul className="nav-links">
           {links.map((link) => (
             <li key={link.id}>
-                <NavLink to={link.path}>{link.text}</NavLink>
+              <NavLink to={link.path}>{link.text}</NavLink>
             </li>
           ))}
         </ul>
