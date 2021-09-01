@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useSelector, useDispatch } from 'react-redux'
 import { removeBook } from '../redux/books/books';
 const DisplayBook =() => {

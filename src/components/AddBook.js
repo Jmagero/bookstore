@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React,{ useState }from "react";
 import { v4 as uuidv4 } from "uuid";
 import { addBook } from "../redux/books/books";
@@ -8,7 +7,7 @@ const AddBooks = () => {
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const newBook = {
-      id: uuidv4(), // make sure it's unique
+      id: uuidv4(), 
       title,
       author,
     }

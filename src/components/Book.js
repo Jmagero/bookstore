@@ -1,4 +1,3 @@
-/* eslint-disable */
 import AddBook  from "./AddBook";
 import DisplayBook from "./DisplayBooks";
 const Book = () => (
