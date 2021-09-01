@@ -1,5 +1,6 @@
-import AddBook  from "./AddBook";
-import DisplayBook from "./DisplayBooks";
+import AddBook from './AddBook';
+import DisplayBook from './DisplayBooks';
+
 const Book = () => (
   <div>
     <h3>BOOKS</h3>
