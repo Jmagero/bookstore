@@ -46,6 +46,19 @@ export const fetchRemoveBook = (id) => (dispatch) =>{
     .then(()=>dispatch(removeBook(id)))
     .catch((err) => console.log(err))
 }
+export const fetchBooks = () => (dispatch) => {
+  try { 
+    axios.get(`${URL}/apps/${API}/books`)
+    .then((response) => {
+      dispatch(getBooks(response.data))
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
