@@ -1,29 +1,30 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { postBook } from '../redux/books/books';
 
 const AddBooks = () => {
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
   const newBook = {
-    id: uuidv4(),
+    item_id: uuidv4(),
     title,
-    author,
+    category,
   };
   const dispatch = useDispatch();
 
   const submitBookToStore = () => {
-    dispatch(addBook(newBook));
+    dispatch(postBook(newBook));
     setTitle('');
-    setAuthor('');
+    setCategory('');
   };
 
   const handleChange = (e) => {
     if (e.target.id === 'title') {
       setTitle(e.target.value);
-    } else if (e.target.id === 'author') {
-      setAuthor(e.target.value);
+    } else if (e.target.id === 'category') {
+      setCategory(e.target.value);
     }
   };
 
@@ -40,10 +41,10 @@ const AddBooks = () => {
         />
         <input
           type="text"
-          value={author}
-          id="author"
-          name="author"
-          placeholder="Add Author..."
+          value={category}
+          id="category"
+          name="category"
+          placeholder="Add category..."
           onChange={(e) => { handleChange(e); }}
         />
         <button type="button" onClick={() => { submitBookToStore(); }}>Submit</button>
