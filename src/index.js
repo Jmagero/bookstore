@@ -6,6 +6,7 @@ import store from './redux/cofigureStore';
 import Navbar from './components/NavBar';
 import Book from './components/Book';
 import Categories from './components/Categories';
+import './style.css';
 
 ReactDOM.render(
   <React.StrictMode>
