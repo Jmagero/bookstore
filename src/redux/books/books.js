@@ -1,14 +1,14 @@
-/* eslint-disable */
-import axios from "axios";
-import { v4 as uuidv4 } from 'uuid';
+/* eslint-disable no-console */
+import axios from 'axios';
+
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const FETCH_BOOKS = 'bookStore/books/FETCH_BOOKS';
 const REQUEST_BOOKS_FAILURE = 'bookStore/books/REQUEST_BOOKS_FAILURE';
-const API = 'OCEGl7wWVt4ipESKaF4S'
-const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi'
+const API = 'OCEGl7wWVt4ipESKaF4S';
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
 
-const initialState = []
+const initialState = [];
 
 export const addBook = (payload) => ({
   type: ADD_BOOK,
@@ -23,46 +23,42 @@ export const removeBook = (id) => ({
 export const getBooks = (payload) => ({
   type: FETCH_BOOKS,
   payload,
-})
-
-export const fetchBooksRequest = () => ({
-  type: REQUEST_BOOKS,
-})
+});
 
 export const fetchFailure = (err) => ({
   type: REQUEST_BOOKS_FAILURE,
-  err
-})
+  err,
+});
 
 export const getID = () => {
-    axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/')
-    .then( response => response.data)
-    .catch( err => console.log(err))
-}
+  axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/')
+    .then((response) => response.data)
+    .catch((err) => console.log(err));
+};
 
 export const postBook = (newBook) => (dispatch) => {
-    axios.post(`${URL}/apps/${API}/books`,newBook)
-    .then(()=> {
-      dispatch(addBook(newBook))
+  axios.post(`${URL}/apps/${API}/books`, newBook)
+    .then(() => {
+      dispatch(addBook(newBook));
     })
-    .catch((err) => console.log(err))
-}
+    .catch((err) => console.log(err));
+};
 
-export const fetchRemoveBook = (id) => (dispatch) =>{
-    axios.delete(`${URL}/apps/${API}/books/${id}`)
-    .then(()=>dispatch(removeBook(id)))
-    .catch((err) => console.log(err))
-}
+export const fetchRemoveBook = (id) => (dispatch) => {
+  axios.delete(`${URL}/apps/${API}/books/${id}`)
+    .then(() => dispatch(removeBook(id)))
+    .catch((err) => console.log(err));
+};
 
 export const fetchBooks = () => (dispatch) => {
-  try { 
+  try {
     axios.get(`${URL}/apps/${API}/books`)
-    .then((response) => {
-      dispatch(getBooks(response.data))
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+      .then((response) => {
+        dispatch(getBooks(response.data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   } catch (error) {
     console.log(error);
   }
@@ -72,7 +68,7 @@ const reducer = (state = initialState, action) => {
   let booksList = [...state];
   switch (action.type) {
     case ADD_BOOK:
-      booksList.push(action.payload)
+      booksList.push(action.payload);
       return booksList;
 
     case REMOVE_BOOK:
@@ -90,5 +86,5 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-
-export default reducer
+export default reducer;
+/* eslint-enable no-console */

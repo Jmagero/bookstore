@@ -1,8 +1,8 @@
-/* eslint-disable */
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchRemoveBook, fetchBooks } from '../redux/books/books';
-import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import React from 'react';
+import { fetchRemoveBook } from '../redux/books/books';
 
 const DisplayBook = (props) => {
   const dispatch = useDispatch();
@@ -11,7 +11,6 @@ const DisplayBook = (props) => {
   const removeBookStore = (id) => {
     dispatch(fetchRemoveBook(id));
   };
-
 
   return (
     <div>
@@ -29,7 +28,7 @@ const DisplayBook = (props) => {
             <button type="button" onClick={() => { removeBookStore(book.item_id); }}>Remove Book</button>
           </li>
         ))}
-      </ul> 
+      </ul>
     </div>
   );
 };
