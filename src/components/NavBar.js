@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from './NavBar.module.css';
 
 const NavBar = () => {
   const links = [
@@ -17,14 +18,14 @@ const NavBar = () => {
   ];
   return (
     <>
-      <nav>
-        <h1>
+      <nav className={styles.NavBar}>
+        <h1 className={styles.BookstoreTitle}>
           BookStore JM
         </h1>
-        <ul className="nav-links">
+        <ul className={styles.navLinks}>
           {links.map((link) => (
             <li key={link.id}>
-              <NavLink to={link.path}>{link.text}</NavLink>
+              <NavLink className={styles.BOOKS} to={link.path}>{link.text}</NavLink>
             </li>
           ))}
         </ul>
