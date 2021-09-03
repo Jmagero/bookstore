@@ -1,15 +1,16 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable */
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
-import booksReducer from './books/books';
+import thunk from 'redux-thunk';
+import booksReducer  from './books/books';
 
 const reducer = combineReducers({
-  books: booksReducer,
+  booksReducer,
 });
 
 const store = createStore(
   reducer,
-  applyMiddleware(logger),
+  applyMiddleware(thunk,logger),
 );
 
 export default store;
