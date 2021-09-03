@@ -13,11 +13,11 @@ ReactDOM.render(
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/">
-            <Book />
-          </Route>
           <Route path="/categories">
             <Categories />
+          </Route>
+          <Route exact path="/">
+            <Book />
           </Route>
         </Switch>
       </Router>
