@@ -41,6 +41,11 @@ export const postBook = (newBook) => (dispatch) => {
     })
     .catch((err) => console.log(err))
 }
+export const fetchRemoveBook = (id) => (dispatch) =>{
+    axios.delete(`${URL}/apps/${API}/books/${id}`)
+    .then(()=>dispatch(removeBook(id)))
+    .catch((err) => console.log(err))
+}
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
