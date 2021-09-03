@@ -1,31 +1,47 @@
+/* eslint-disable */
+import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { fetchRemoveBook, fetchBooks } from '../redux/books/books';
+import React, { useState, useEffect } from 'react';
 
-const DisplayBook = () => {
-  const state = useSelector((state) => state);
-  const { books } = state;
+const DisplayBook = (props) => {
   const dispatch = useDispatch();
+  const { bookList } = props;
 
-  const removeBookStore = (e) => {
-    dispatch(removeBook(e.target.id));
+  const removeBookStore = (id) => {
+    dispatch(fetchRemoveBook(id));
   };
+
+
   return (
     <div>
-      {books.map((book) => (
-        <li key={book.id}>
-          <p>
-            Title:
-            { book.title }
-          </p>
-          <p>
-            Author:
-            { book.author }
-          </p>
-          <button type="button" id={book.id} onClick={(e) => { removeBookStore(e); }}>Remove Book</button>
-        </li>
-      ))}
+      <ul>
+        {bookList.map((book) => (
+          <li key={book.item_id}>
+            <p>
+              Title:
+              { book.title }
+            </p>
+            <p>
+              Author:
+              { book.category }
+            </p>
+            <button type="button" onClick={() => { removeBookStore(book.item_id); }}>Remove Book</button>
+          </li>
+        ))}
+      </ul> 
     </div>
   );
 };
 
 export default DisplayBook;
+
+DisplayBook.propTypes = {
+  bookList: PropTypes.arrayOf(
+    PropTypes.shape({
+      item_id: PropTypes.string.isRequired,
+      title: PropTypes.string,
+      category: PropTypes.string,
+    }),
+  ).isRequired,
+};
