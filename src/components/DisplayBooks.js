@@ -1,8 +1,7 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import React from 'react';
-import { fetchRemoveBook } from '../redux/books/books';
+import { fetchRemoveBook } from '../redux/books/bookActions';
 
 const DisplayBook = (props) => {
   const dispatch = useDispatch();
