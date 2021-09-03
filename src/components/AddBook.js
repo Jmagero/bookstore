@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { postBook } from '../redux/books/books';
+import { postBook } from '../redux/books/bookActions';
 
 const AddBooks = () => {
   const [title, setTitle] = useState('');
@@ -11,12 +11,15 @@ const AddBooks = () => {
     title,
     category,
   };
+
   const dispatch = useDispatch();
 
   const submitBookToStore = () => {
-    dispatch(postBook(newBook));
-    setTitle('');
-    setCategory('');
+    if (title.trim() && category.trim()) {
+      dispatch(postBook(newBook));
+      setTitle('');
+      setCategory('');
+    }
   };
 
   const handleChange = (e) => {
