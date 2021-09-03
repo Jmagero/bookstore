@@ -34,6 +34,13 @@ export const getID = () => {
     .then( response => response.data)
     .catch( err => console.log(err))
 }
+export const postBook = (newBook) => (dispatch) => {
+    axios.post(`${URL}/apps/${API}/books`,newBook)
+    .then(()=> {
+      dispatch(addBook(newBook))
+    })
+    .catch((err) => console.log(err))
+}
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
