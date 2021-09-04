@@ -1,6 +1,29 @@
-.root {
-  --icon-font: montserrat;
-  --font: robotoslab;
+.font1Bold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.font1Reg {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.font2Light {
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+}
+
+.font2Bold {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+}
+
+.blue {
+  color: #4386bf;
+}
+
+.black {
+  color: #121212;
 }
 
 .booksContainer {
@@ -27,26 +50,18 @@
 }
 
 .title {
-  font-family: var(--font);
-  font-size: 1.375rem;
-  font-weight: bold;
   letter-spacing: -0.2px;
-  color: #121212;
+  font-size: 1.5rem;
   margin: 0;
 }
 
 .category {
-  font-family: var(--font);
-  font-size: 0.875rem;
-  font-weight: 300;
-  color: #4386bf;
+  font-size: 0.8rem;
   margin: 0;
 }
 
 .buttons {
-  font-family: var(--font);
   font-size: 0.875rem;
-  color: #4386bf;
   border: none;
   background-color: white;
   margin-top: 1rem;
@@ -67,60 +82,31 @@
 }
 
 .percentage {
-  font-family: var(--icon-font);
   font-size: 2rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #121212;
   margin: 0;
 }
 
 .completed {
   opacity: 0.5;
-  font-family: var(--icon-font);
   font-size: 0.875rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #121212;
   margin: 0;
 }
 
 .current {
   opacity: 0.5;
-  font-family: var(--font);
   font-size: 0.813rem;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #121212;
 }
 
 .chapter {
-  font-family: var(--font);
   font-size: 1rem;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: -0.4px;
-  color: #121212;
 }
 
 .update {
   padding: 0.438rem 1.188rem 0.5rem 1.375rem;
   border: none;
   background-color: #0290ff;
-  font-family: var(--font);
   font-size: 0.813rem;
-  font-weight: 300;
   letter-spacing: 0.5px;
   text-align: center;
   color: #fff;
