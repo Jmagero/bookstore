@@ -10,7 +10,6 @@
 
 .blue {
   color: #0290ff;
-  color: #0290ff;
 }
 
 .NavBar,
@@ -18,12 +17,6 @@
 .insideDiv1,
 .navLinks {
   display: flex;
-}
-
-.NavBar,
-.div,
-.insideDiv1,
-.navLinks {
   align-items: center;
 }
 
