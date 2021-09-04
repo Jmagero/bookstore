@@ -6,9 +6,8 @@ body {
 
 #root {
   height: 90%;
-  width: 70%;
+  width: 90%;
   margin: 3rem auto;
-  padding: 0 5.625rem;
   border-radius: 4px;
   background-color: #fff;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -16,4 +15,6 @@ body {
 
 .container {
   padding-bottom: 3rem;
+  width: 80%;
+  margin: 0 auto;
 }
