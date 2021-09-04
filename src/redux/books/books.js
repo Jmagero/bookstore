@@ -1,24 +1,29 @@
-const ADD_BOOK = 'bookStore/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
+import {
+  ADD_BOOK, REMOVE_BOOK, FETCH_BOOKS, REQUEST_FAILURE,
+} from './bookTypes';
 
 const initialState = [];
 
-export const addBook = (payload) => ({
-  type: ADD_BOOK,
-  payload,
-});
-export const removeBook = (id) => ({
-  type: REMOVE_BOOK,
-  id,
-});
-
 const reducer = (state = initialState, action) => {
+  let booksList = [...state];
   switch (action.type) {
     case ADD_BOOK:
-      return [...state, action.payload];
+      booksList.push(action.payload);
+      return booksList;
 
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.id);
+      booksList = booksList.filter((book) => book.item_id !== action.id);
+      return booksList;
+
+    case FETCH_BOOKS: {
+      const fetchBooks = Object.keys(action.payload)
+        .map((key) => ({ ...action.payload[key][0], item_id: key }));
+      booksList = [...booksList, ...fetchBooks];
+      return booksList;
+    }
+    case REQUEST_FAILURE:
+      return booksList;
+
     default:
       return state;
   }
