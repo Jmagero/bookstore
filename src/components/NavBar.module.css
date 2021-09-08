@@ -1,0 +1,83 @@
+.font1Reg {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.font1Bold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.blue {
+  color: #0290ff;
+}
+
+.NavBar,
+.div,
+.insideDiv1,
+.navLinks {
+  display: flex;
+  align-items: center;
+}
+
+.NavBar {
+  justify-content: center;
+  height: 80px;
+  border-bottom: 1px solid #e8e8e8;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.div {
+  justify-content: space-around;
+  width: 80%;
+}
+
+.insideDiv1 {
+  flex: 2;
+}
+
+.insideDiv2 {
+  flex: 0.1;
+}
+
+.navLinks {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.BookstoreTitle {
+  width: 15rem;
+  height: 2.313rem;
+  margin: 0.375rem 2.938rem 0.125rem 0;
+  font-size: 1.875rem;
+}
+
+.BOOKS {
+  width: 3.688rem;
+  height: 1rem;
+  margin: 1.125rem 2.563rem 0.688rem 0;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  color: #121212;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.BOOKS:hover {
+  color: #0290ff;
+}
+
+.icon {
+  font-size: 1.5rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 50%;
+  padding: 5px;
+  transition: all 0.5s;
+}
+
+.icon:hover {
+  color: black;
+  cursor: pointer;
+}

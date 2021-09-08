@@ -3,6 +3,8 @@
 # Bookstore
 This project is about laying the foundations for  Bookstore website. 
 
+![image](https://user-images.githubusercontent.com/52098394/132098461-8acb8f56-d54a-4269-b913-efdb88a5be83.png)
+
 ## Built With
 
 - React

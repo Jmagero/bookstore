@@ -13,8 +13,7 @@ const Book = () => {
   const bookList = store.booksReducer;
 
   return (
-    <div>
-      <h3>BOOKS</h3>
+    <div className="container">
       <DisplayBook bookList={bookList} />
       <AddBook />
     </div>
